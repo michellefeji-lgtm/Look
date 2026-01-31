@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobi — Invitation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #fff8f0;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #e63946;
+            font-size: 2.5rem;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            margin: 15px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+        #yesBtn {
+            background: #2a9d8f;
+            color: white;
+        }
+        #noBtn {
+            background: #e76f51;
+            color: white;
+            position: relative;
+        }
+        #celebrate {
+            display: none;
+            margin-top: 40px;
+        }
+        #celebrate img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tobi, will you come for my induction?</h1>
+
+    <button id="yesBtn">Yes 😄</button>
+    <button id="noBtn">No 😬</button>
+
+    <div id="celebrate">
+        <h2>Yay!! 🎉</h2>
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyNnJnOGlkNzY0N3gyYjJhaHh5b2J5NHh5cWVqeXo4Y2llZnZrMmVscSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IzXiddo2twMmdmU8Lv/giphy.gif" alt="Celebration">
+        <p>Can’t wait to see you there!</p>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const celebrate = document.getElementById('celebrate');
+
+        // Show celebration if Yes is clicked
+        yesBtn.addEventListener('click', () => {
+            celebrate.style.display = 'block';
+        });
+
+        // Move "No" button when hovered
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        });
+    </script>
+
+</body>
+</html>
